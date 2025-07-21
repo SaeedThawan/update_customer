@@ -1,4 +1,4 @@
-// ✅ روابط ملفات JSON على GitHub بصيغة raw
+// ✅ روابط ملفات JSON من GitHub بصيغة raw
 const customersURL = "https://raw.githubusercontent.com/SaeedThawan/update_customer/main/customers_main.json";
 const repsURL = "https://raw.githubusercontent.com/SaeedThawan/update_customer/main/sales_representatives.json";
 

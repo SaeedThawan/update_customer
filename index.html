@@ -1,27 +1,76 @@
-<!-- HTML جاهز لتحديث ربط العملاء بالمندوبين -->
-<html lang="ar" dir="rtl">
+<!DOCTYPE html>
+<html lang="ar">
 <head>
   <meta charset="UTF-8">
-  <title>تحديث ارتباط العملاء</title>
-  <link rel="stylesheet" href="style.css">
+  <title>ربط العملاء بالمندوب</title>
+  <style>
+    body { font-family: Arial, sans-serif; direction: rtl; padding: 30px; max-width: 600px; margin: auto; background: #f9f9f9; }
+    h2, h3 { color: #333; }
+    label { display: block; margin-top: 10px; }
+    #clientList label { display: block; margin: 5px 0; }
+    button { margin-top: 20px; padding: 10px 20px; font-weight: bold; background: #0284c7; color: white; border: none; border-radius: 5px; cursor: pointer; }
+  </style>
 </head>
 <body>
-  <h2>📋 ربط العملاء بالمندوبين</h2>
-  <table id="clientsTable">
-    <thead>
-      <tr>
-        <th>رقم العميل</th>
-        <th>اسم العميل</th>
-        <th>المدينة</th>
-        <th>المنطقة</th>
-        <th>المندوب الحالي</th>
-        <th>اختر المندوب</th>
-        <th>الحالة</th>
-      </tr>
-    </thead>
-    <tbody></tbody>
-  </table>
-  <button onclick="saveUpdates()">💾 حفظ</button>
-  <script src="update_script.js"></script>
+
+  <h2>👤 اختر اسمك كمندوب</h2>
+  <select id="repName">
+    <option value="JD01">محمد الحضرمي - جدة</option>
+    <option value="RD01">زايد الهميس - الرياض</option>
+    <option value="MK01">خالد الحداد - مكة</option>
+    <!-- أضف باقي المندوبين -->
+  </select>
+
+  <h3>📋 العملاء المتاحين</h3>
+  <div id="clientList">
+    <!-- يتم إدخال العملاء يدويًا أو من مصدر ديناميكي -->
+    <label><input type="checkbox" value="2106|شركة الصالة الاقتصادية للتجارة - جدة|جدة|الغربية"> 2106 - شركة الصالة الاقتصادية للتجارة - جدة</label>
+    <label><input type="checkbox" value="4010|تموينات الحياة - القريات|جدة|الغربية"> 4010 - تموينات الحياة - القريات</label>
+    <label><input type="checkbox" value="24050|شركة ازهار الباسم التجارية - الرياض|الرياض|الوسطى"> 24050 - شركة ازهار الباسم التجارية - الرياض</label>
+    <!-- أضف باقي الـ50 عميل حسب القائمة اللي جهزتها -->
+  </div>
+
+  <label>📦 اسم الجروب / الدفعة (اختياري):</label>
+  <input type="text" id="batchName" style="width: 100%;">
+
+  <label>📝 ملاحظات (اختياري):</label>
+  <textarea id="notes" rows="3" style="width: 100%;"></textarea>
+
+  <button onclick="submitSelection()">إرسال</button>
+
+  <script>
+    function submitSelection() {
+      const repCode = document.getElementById("repName").value;
+      const repName = document.getElementById("repName").options[document.getElementById("repName").selectedIndex].text;
+      const checkboxes = document.querySelectorAll("#clientList input:checked");
+      const batch = document.getElementById("batchName").value;
+      const notes = document.getElementById("notes").value;
+
+      const clients = [];
+      checkboxes.forEach(cb => {
+        const [code, name, city, region] = cb.value.split("|");
+        clients.push({ code, name, city, region });
+      });
+
+      fetch("YOUR_GOOGLE_SCRIPT_WEB_APP_URL", {
+        method: "POST",
+        body: new URLSearchParams({
+          repCode,
+          repName,
+          batchName: batch,
+          notes,
+          clients: JSON.stringify(clients)
+        })
+      })
+      .then(res => res.text())
+      .then(msg => {
+        alert(msg);
+        document.querySelectorAll("#clientList input:checked").forEach(cb => cb.checked = false);
+        document.getElementById("notes").value = "";
+        document.getElementById("batchName").value = "";
+      });
+    }
+  </script>
+
 </body>
 </html>

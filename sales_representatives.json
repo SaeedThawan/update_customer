@@ -1,0 +1,42 @@
+[
+  {
+    "Sales_Rep_ID": "JD-001",
+    "Sales_Rep_Name_AR": "محمد الحضرمي",
+    "Region": "الغربية"
+  },
+  {
+    "Sales_Rep_ID": "JD-002",
+    "Sales_Rep_Name_AR": "سليمان سيف",
+    "Region": "الغربية"
+  },
+  {
+    "Sales_Rep_ID": "RY-001",
+    "Sales_Rep_Name_AR": "حازم",
+    "Region": "الوسطي"
+  },
+  {
+    "Sales_Rep_ID": "RY-002",
+    "Sales_Rep_Name_AR": "أبو عمار",
+    "Region": "الوسطي"
+  },
+  {
+    "Sales_Rep_ID": "MK-001",
+    "Sales_Rep_Name_AR": "خالد الحداد",
+    "Region": "الغربية"
+  },
+  {
+    "Sales_Rep_ID": "JZ-001",
+    "Sales_Rep_Name_AR": "أسامة الشلح",
+    "Region": "الجنوبية"
+  },
+  {
+    "Sales_Rep_ID": "DM-001",
+    "Sales_Rep_Name_AR": "سعيد",
+    "Region": "الشرقية"
+  },
+  {
+    "Sales_Rep_ID": "MD-001",
+    "Sales_Rep_Name_AR": "عماد عز الدين",
+    "Region": "الشمالية"
+  }
+]

@@ -1,0 +1,41 @@
+[
+  {
+    "Customer_Code": "2106",
+    "Customer_Branch_ID": "BR-JD-01",
+    "Customer_Name_AR": "شركة الصالة الاقتصادية للتجارة - جدة",
+    "City": "جدة",
+    "Region": "الغربية",
+    "Category_Main": "حلويات",
+    "Category_Sub": "تخفيضات",
+    "Customer_Status": "نشط",
+    "Current_Sales_Rep_ID": "JD-001",
+    "Previous_Sales_Rep_ID": "",
+    "Notes": ""
+  },
+  {
+    "Customer_Code": "4009",
+    "Customer_Branch_ID": "BR-JD-02",
+    "Customer_Name_AR": "تموينات ابو نايف - القريات",
+    "City": "جدة",
+    "Region": "الغربية",
+    "Category_Main": "حلويات",
+    "Category_Sub": "جملة",
+    "Customer_Status": "مقفل",
+    "Current_Sales_Rep_ID": "JD-002",
+    "Previous_Sales_Rep_ID": "",
+    "Notes": ""
+  },
+  {
+    "Customer_Code": "4010",
+    "Customer_Branch_ID": "BR-JD-03",
+    "Customer_Name_AR": "تموينات الحياة - القريات",
+    "City": "جدة",
+    "Region": "الغربية",
+    "Category_Main": "حلويات",
+    "Category_Sub": "سوبر ماركت",
+    "Customer_Status": "غير نشط",
+    "Current_Sales_Rep_ID": "JD-002",
+    "Previous_Sales_Rep_ID": "",
+    "Notes": ""
+  }
+]
